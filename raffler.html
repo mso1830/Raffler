@@ -1,0 +1,35 @@
+<html>
+<head>
+  <link rel="stylesheet" href="raffler.css" media="screen">
+</head>
+<body>
+   <header id="header">
+      <h1>Raffler</h1>
+    </header>
+    <section id="raffler">
+    <div id="container">
+    	</div>
+      <label class="entry-name">
+    <script type="text/template" id="item-template">
+    <input type="text" id="new_entry"/>
+        <button id="new">Add</button>
+         
+    <ul>
+      <% _.each(entries, function(entry){ %>
+            <li class='idItem' id='<%- entry.id %>'><%- entry.name %> <span class="entry-winner"> <% if (entry.winner) { %> <b>WINNER</b><% } %> </span></li>
+      <% }); %>
+    </ul>
+    </label>
+    <div id='chooser'>
+    <button id="draw">Draw Winner</button><button id="reset">reset</button>
+    </div>
+ </script> 
+</section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+  <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+  <script src="backbone.localStorage.js" type="text/javascript"></script>
+  <script src="raffler.js"></script>
+</body>
+</html>
